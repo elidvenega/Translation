@@ -11,7 +11,7 @@ const pitchValue = document.querySelector('#pitch-value');
 const body = document.querySelector('body');
 // Init voices array
 let voices = [];
-const getVoices = () => {
+const getVoices = function () {
     voices = synth.getVoices();
     // Loop through voices and create an option for each one
     voices.forEach(voice => {
@@ -30,7 +30,7 @@ if (synth.onvoiceschanged !== undefined) {
     synth.onvoiceschanged = getVoices;
 }
 // Speak
-const speak = () => {
+const speak = function () {
     // Check if speaking
     if (synth.speaking) {
         console.error('Already speaking...');
